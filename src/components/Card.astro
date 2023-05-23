@@ -10,7 +10,7 @@ let postExcerpt = (post) => {
 const { post } = Astro.props;
 ---
 
-<div class="card w-full bg-base-100 shadow-xl rounded-t-md md:w-96">
+<div class="card w-full bg-base-100 shadow-xl rounded-t-md md:w-96 mb-8">
     <figure class="bg-white">
         <img
             src={post._embedded['wp:featuredmedia']['0'].source_url}
@@ -18,7 +18,7 @@ const { post } = Astro.props;
         />
     </figure>
     <div class="card-body bg-gray-700 rounded-b-md">
-        <a href={`/dinos/${post.slug}/`}>
+        <a href={`/post/${post.slug}/`}>
             <h2
                 class="card-title hover:underline hover:decoration-wavy decoration-red-600 decoration-4"
                 set:html="post.title.rendered"
