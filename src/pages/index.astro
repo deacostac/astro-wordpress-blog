@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '~/components/Card.astro';
+import { getPosts } from '../../lib/api';
+
+let posts = await getPosts();
+---
+
+<Layout title="Dinos!">
+    <section
+        class="p-2 grid gap-4 overflow-hidden grid-cols-1 place-items-center md:grid-cols-3"
+    >
+        {
+            posts.map((post) => (
+                <>
+                    <Card {post} />
+                </>
+            ))
+        }
+    </section>
+</Layout>
